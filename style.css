@@ -1,2 +1,86 @@
 @import url('https://fonts.googleapis.com/css2? family = Baloo + Tammudu + 2: wght @ 400; 500 & family = Josefin + Slab: ital, wght @ 0,300; 0,400; 0,600; 1.300 & family = Mali: ital, wght @ 0,200; 0,400; 1.400 & display = swap ');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+*{
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black
+
+}
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    opacity: 0.5;
+    animation: zoom 25s;
+}
+@keyframes zoom {
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.banner{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    animation: moveBanner 1s;
+}
+.banner h1{
+    color: white;
+    font-size: 3.5rem;
+    font-family: "Baloo Tammudu 2", serif;
+    font-weight: 200;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.banner p {
+    font-family: 'Josefin Slab', serif;
+    color: #FFF;
+    font-size: 2rem;
+    text-shadow: 1px 2px rgba(0,0,0,0.4);
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+
+}
+.banner button{
+    font-family: "Muli", serif ;
+    color: #fff;
+    background: #8E2DE2; 
+    letter-spacing: 0.1rem;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    text-transform:uppercase ;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.banner button:hover{
+    opacity: 0.8;
+    color: black;
+    font-weight: 700;
+
+}
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+    }
+}
