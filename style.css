@@ -3,7 +3,32 @@
 
 *{
     margin: 0;
+    list-style: none;
+    text-decoration: none;
 }
+
+.hamburguer{
+    /*Menu*/
+/*background-color: brown;*/
+width: 2rem;
+height: 2rem;
+position: fixed; /*Torna o elemento fixo na tela*/
+z-index: 100; /*Serve para trazer o elemento para frente do outro*/
+right: 2rem; /*Movendo ele em relação a margem*/
+top: 2rem;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+cursor: pointer;
+}
+.line{
+    /*Formatando as linhas que vai ficar dentro do menu*/
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 1px #000;
+}
+
 header{
     width: 100%;
     height: 100vh;
@@ -22,7 +47,7 @@ header{
     overflow: hidden;
     object-fit: cover;
     opacity: 0.5;
-    animation: zoom 25s;
+    animation: zoom 25s; /*Essa e a animação e o nome vem do keyframes*/
 }
 @keyframes zoom {
     0%{
@@ -37,6 +62,14 @@ header{
     top: 30%;
     left: 15%;
     animation: moveBanner 1s;
+}
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+    }
 }
 .banner h1{
     color: white;
@@ -76,11 +109,60 @@ header{
 
 }
 
-@keyframes moveBanner{
-    0%{
-        transform: translateY(10rem) rotateY(-30deg);
-    }
-    100%{
-        transform: translateY(0) rotateY(0);
-    }
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right:-20rem; /*Como a posição e 0 esse -20 faz ele sumir*/
+    transition: all 1s;
+    
+    
+}
+.sidebar.show-menu{
+    /*Deve ter os nomes juntos acima para funcionar*/
+    right: 0; /*javascript cria a classe e se ela tive ele adiciona na pocição inicial*/
+}
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+.menu-item{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.menu-link{
+    font-family: sans-serif ;
+    font-size: 2rem;
+    color: #555;
+    transition: color 1s;/*Serve para indicar que quando for trocar a color atraves do hover vai demora 1 segundo */
+}
+.menu-link:hover{
+    color: #4A00E0;
+}
+
+.social-media{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+}
+.social-media i {
+    background-color: #8E2DE2;
+    color: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s;
+}
+.social-media i:hover{
+    background-color: #4A00E0;
 }
